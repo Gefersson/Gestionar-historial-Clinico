@@ -5,6 +5,7 @@
  */
 package gestionhistorialclinico;
 
+import static gestionhistorialclinico.GestionHistorialClinico.lista;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,9 +26,11 @@ public class Medicos {
     }
 
    public void verMedicos(){
-        JOptionPane.showMessageDialog(null, "nombre del doctor: "+nombre+"\n"+"su apellido:"+apellidos+
+        JOptionPane.showMessageDialog(null, "nombre del doctor(a): "+nombre+"\n"+"su apellido: "+apellidos+
                 "\n"+"su numero de identificacion: "+identificacion+"\n"+"su especialidad es: "+especialidad);
-    }
+    
+   
+   }
     
     public String getNombre() {
         return nombre;
@@ -60,5 +63,6 @@ public class Medicos {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
-    
-}
+    }
+     
+

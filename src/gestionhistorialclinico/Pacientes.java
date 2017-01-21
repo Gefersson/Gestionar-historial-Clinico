@@ -11,7 +11,8 @@ import javax.swing.JOptionPane;
  *
  * @author juan
  */
-public class Pacientes{
+public class Pacientes extends ListaPublica{
+   
   private  String nombres;
   private  String apellido;
   private  int edad;
@@ -25,7 +26,12 @@ public class Pacientes{
         this.identificacion = identificacion;
         this.genero = genero;
     }
-
+    public void listaGeneral(){
+        JOptionPane.showMessageDialog(null,"un gusto de haber mostrato la lista de pacientes.gracias");
+    }
+    
+    
+    
     public void verPacientes(){
     JOptionPane.showMessageDialog(null, "cual es su nombre del paciente: "+nombres+"\n"+"sus apellidos: "
             +apellido+"\n"+"su genero es: "+genero+"\n"+"mecione su edad: "+ edad+"\n"+"su identifacion: "+identificacion);
@@ -69,5 +75,5 @@ public class Pacientes{
     public void setGenero(String genero) {
         this.genero = genero;
     }
-   
+
 }

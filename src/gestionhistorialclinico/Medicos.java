@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author juan
  */
-public class Medicos {
+public class Medicos extends ListaPublica{
    private  String nombre;
     private String apellidos ;
     private int identificacion;
@@ -23,6 +23,9 @@ public class Medicos {
         this.apellidos = apellidos;
         this.identificacion = identificacion;
         this.especialidad = especialidad;
+    }
+     public void listaGeneral(){
+        JOptionPane.showMessageDialog(null,"un gusto de haber mostrato la lista de  medicos.gracias");
     }
 
    public void verMedicos(){

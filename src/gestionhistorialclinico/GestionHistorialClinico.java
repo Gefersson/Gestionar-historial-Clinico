@@ -29,63 +29,77 @@ public class GestionHistorialClinico {
     public static void main(String[] args) {
         // TODO code application logic here
    
-   lista.add(new Medicos("JUAN CARLOR", "ALVAREZ MENDOZA", 20171214, "CARDIOLOGO"));
-      lista.add(new Medicos("CINTIA DAYSI", "ALATA ALATA", 20171516, "ODONTOLOGA"));
-   
+    lista.add(new Medicos("JUAN CARLOR", "ALVAREZ MENDOZA", 20171214, "CARDIOLOGO"));
+    lista.add(new Medicos("CINTIA DAYSI", "ALATA ALATA", 20171516, "ODONTOLOGA"));
+    listita.add(new Pacientes("LUIS","CUBA",20171315, 23, "Masculino"));
+     
+    int opt=0;
       
-      listita.add(new Pacientes("LUIS","CUBA", 23233, 23, "Masculino"));
-    
-      int opt=0;
       do{
-       opt = Integer.parseInt(JOptionPane.showInputDialog(null,"----Historial Clinico----\n"+
+        opt = Integer.parseInt(JOptionPane.showInputDialog(null,"----Historial Clinico----\n"+
                "1 - LISTA DE MEDICOS\n"+
                "2 - LISTA DE PACIENTES\n"+
                "3 - SALIR"));
       switch(opt){
+          case 3: opt=0;break;
+          default: JOptionPane.showMessageDialog(null, "la opcion no existe ");
           case 1: {
               List<Medicos> lista=new LinkedList<Medicos>();
-               do{
+             opt=1;             
+              do{
           opt=Integer.parseInt(JOptionPane.showInputDialog(null,"**Menu de Medicos**\n"+
               "1 - Agregar Medico\n"+
               "2- Eliminar Medico\n"+
               "3- mostrar Medico\n"+
-              "4 - atras"));
+              "4 - salir"));
               switch(opt){
           case 1: agregar();break;
           case 2: eliminar();break;
           case 3: mostrar(); break;
           case 4: opt=0;break;
-          default: JOptionPane.showMessageDialog(null, "la opcion no existe ");
-      }
-      }while(opt!=0);
+          default: JOptionPane.showMessageDialog(null,"la opcion no existe");
+      
+              }
+              }while(opt!=0);
+           
+              ListaPublica a=new Medicos("cinthia","alata", 2323,"odontologa");
+              a.listaGeneral();
+              ListaPublica b=new Pacientes("david","perez", 4332, 23, "masculino");
+              b.listaGeneral();
           }
+          
+         
           case 2:{List<Pacientes>listita=new LinkedList<Pacientes>();
-             do{
+          opt=0;   
+          do{
           opt=Integer.parseInt(JOptionPane.showInputDialog(null,"***Menu de Pacientes***\n"+
               "1 - aumentar Paciente\n"+
               "2- retirar Paciente\n"+
               "3- detallar Paciente\n"+
-              "4 - atras"));
+              "4 - salir"));
               switch(opt){
           case 1: aumentar();break;
           case 2: retirar();break;
           case 3: detallar(); break;
           case 4: opt=0;break;
           default: JOptionPane.showMessageDialog(null, "la opcion no existe ");
-      }
-      }while(opt!=0);    
+      }}
+     while(opt!=0);    
           }
+         ListaPublica a=new Medicos("cinthia","alata", 2323,"odontologa");
+         a.listaGeneral();
+         ListaPublica b=new Pacientes("david","perez", 4332, 23, "masculino");
+         b.listaGeneral();  
           
-          case 3: opt=0;break;
-          default: JOptionPane.showMessageDialog(null, "la opcion no existe ");
-      }
+          }
       }while(opt!=0);
-      ListaPublica a=new Medicos("cinthia","alata", 2323,"odontologa");
-      a.listaGeneral();
-      ListaPublica b=new Pacientes("david","perez", 4332, 23, "masculino");
-     b.listaGeneral();
-    } 
-     private static void mostrar()
+      
+      
+    
+    }    
+    
+    
+    private static void mostrar()
     {for(int i=0;i<lista.size();i++){
     lista.get(i).verMedicos();  
     }
